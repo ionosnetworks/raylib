@@ -1420,6 +1420,60 @@ int GetScreenHeight(void)
     return CORE.Window.screen.height;
 }
 
+#if defined(PLATFORM_ANDROID) || defined(PLATFORM_RPI) || defined(PLATFORM_DRM) || defined(PLATFORM_UWP)
+
+// Get EGL Display
+void *GetWindowEGLDisplay(void)
+{
+    return CORE.Window.device;
+}
+
+// Get EGL Surface
+void *GetWindowEGLSurface(void)
+{
+    return CORE.Window.surface;
+}
+
+// Get EGL Context
+void *GetWindowEGLContext(void)
+{
+    return CORE.Window.context;
+}
+
+// Get EGL Config
+void *GetWindowEGLConfig(void)
+{
+    return CORE.Window.config;
+}
+
+#else
+
+// Get EGL Display
+void *GetWindowEGLDisplay(void)
+{
+    return NULL;
+}
+
+// Get EGL Surface
+void *GetWindowEGLSurface(void)
+{
+    return NULL;
+}
+
+// Get EGL Context
+void *GetWindowEGLContext(void)
+{
+    return NULL;
+}
+
+// Get EGL Config
+void *GetWindowEGLConfig(void)
+{
+    return NULL;
+}
+
+#endif
+
 // Get native window handle
 void *GetWindowHandle(void)
 {

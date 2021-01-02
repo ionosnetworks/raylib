@@ -915,6 +915,10 @@ RLAPI void SetWindowSize(int width, int height);                  // Set window 
 RLAPI void *GetWindowHandle(void);                                // Get native window handle
 RLAPI int GetScreenWidth(void);                                   // Get current screen width
 RLAPI int GetScreenHeight(void);                                  // Get current screen height
+RLAPI void *GetWindowEGLDisplay(void); 
+RLAPI void *GetWindowEGLSurface(void); 
+RLAPI void *GetWindowEGLContext(void); 
+RLAPI void *GetWindowEGLConfig(void); 
 RLAPI int GetMonitorCount(void);                                  // Get number of connected monitors
 RLAPI Vector2 GetMonitorPosition(int monitor);                    // Get specified monitor position
 RLAPI int GetMonitorWidth(int monitor);                           // Get specified monitor width
